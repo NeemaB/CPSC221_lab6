@@ -33,7 +33,27 @@ void quicksort(int a, int b) {
 	quicksort(m+1, b);
 }
 
-#define NN 1000
+int qc(int n){
+	if(n <= 1){
+		return 0;
+	}else{
+		int p = randint(0, n-1);
+		return (n-1) + qc(p) + qc(n - 1 - p);
+	}
+}
+
+int qc_ave(int n){
+	if(n <= 1) return 0;
+	float sum = 0.0;
+	for(int m = 1; m <= n; m++){
+		sum += (n-1) + qc_ave(m-1) + qc_ave(n-m);
+	}
+	return sum / n;
+}
+
+		
+
+#define NN 10
 
 int main(int argc, char *argv[]) {
 	srand(time(0));
@@ -53,8 +73,14 @@ for(int k = 0 ; k < 100 ; k++){
 	// }
 	sum = sum + comps ;
 }
+	int comps_qc = qc(NN);
+	int comps_qc_ave = qc_ave(NN);
+
 	std::cout << std::endl;
-	std::cout << "# of computations:" << sum/100 ;
+	std::cout << "# of computations: " << sum/100 << std::endl ;
+	
+	std::cout << "# of computations for qc on array[NN]: " << comps_qc << std::endl ;
+	std::cout << "# of computations for qc_ave on array[NN]: " << comps_qc_ave << std::endl;
 
 	delete[] x;
 	return 0;
