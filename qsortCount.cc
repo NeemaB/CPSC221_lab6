@@ -46,11 +46,6 @@ for(int k = 0 ; k < 100 ; k++){
 		x[i] = rand() % NN;
 	}
 	
-	quicksort(0, NN-1);
-	for (int i=0; i<NN; ++i) {
-		std::cout << x[i] << " ";
-	}
-	std::cout << std::endl;
 
 	quicksort(0, NN-1);
 	// for (int i=0; i<NN; ++i) {
