@@ -1,0 +1,1 @@
+Average # of computations = 11088
