@@ -3,7 +3,9 @@ Recurrence relation :
 base case: T(0) = c , T(1) = c
 n + sum (m = 1 to n) (T(m-1) + T(n-m))
 
-Average Case of Quicksort will run in O(nlogn) and Worst Case will run in O(n^2)
+Average Case of Quicksort will run in O(nlogn) because there if each partition is n/2 in size there will be log n
+recursive calls to quicksort, with (n-1) comparisons in each run.
+Worst Case will run in O(n^2) because each recursive call of quicksort will be on a subarray of size decremented by 1
 
 Quick sort is an in-order sort because no additional data structure is used to sort the input array.
 Quick sort is not stable because the records with the same key are not guaranteed to appear in the same order
