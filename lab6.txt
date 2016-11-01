@@ -1,7 +1,7 @@
 Average # of computations = 11088
 Recurrence relation :
-base case: T(0) = c , T(1) = c
-n + sum (m = 1 to n) (T(m-1) + T(n-m))
+base case: T(0) = 0 , T(1) = 0
+C(n) = [sum (m = 1 to n) (n-1 + C(m-1) + C(n-m))]/n
 
 Average Case of Quicksort will run in O(nlogn) and Worst Case will run in O(n^2)
 
